@@ -1,11 +1,12 @@
-wordpress:
-  image: wordpress
-  links:
-   - mysql:mysql
-  ports:
-   - 8080:80
-   
-mysql:
-  image:mysql
-  environment:  
-   - MYSQL_ROOT_PASSWORD=password
+version : '3'
+services:
+  python-app:
+    build:
+    ports:
+     - "5000:5000"
+    volumes:
+     - .:/sampleapp
+    depends_on:
+      - redis
+    redis:
+      image: redis
