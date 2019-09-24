@@ -8,5 +8,5 @@ services:
      - .:/sampleapp
     depends_on:
       - redis
-    redis:
+  redis:
       image: redis
